@@ -2,6 +2,7 @@ package leetCode.FindBinaryTree0713;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -52,7 +53,12 @@ public class BinaryTree {
             Arrays.sort(arrayMax);
         }
         //数组下标从0开始
-        subIndex = ((label - (totalNums - 1)) / 2) + ((label - (totalNums - 1)) % 2) - 1;
+        if (numLevels % 2 != 0) {
+            subIndex = ((label - (totalNums - 1)) / 2) + ((label - (totalNums - 1)) % 2) - 1;
+        } else {
+            subIndex = totalNums / 2 - (subIndex = ((label - (totalNums - 1)) / 2) + ((label - (totalNums - 1)) % 2) - 1 - 1);
+        }
+//        subIndex = ((label - (totalNums - 1)) / 2) + ((label - (totalNums - 1)) % 2) - 1;
         resultList.add(label);
 
         numLevels = numLevels - 1;
@@ -82,18 +88,26 @@ public class BinaryTree {
             //将目标值替换
             label = arrayMax[subIndex];
             //上一组
-            subIndex = ((label - (totalNums - 1)) / 2) + ((label - (totalNums - 1)) % 2) - 1;
+
+            if (numLevels % 2 != 0) {
+                subIndex = ((label - (totalNums - 1)) / 2) + ((label - (totalNums - 1)) % 2) - 1;
+            } else {
+                subIndex = totalNums / 2 - (subIndex = ((label - (totalNums - 1)) / 2) + ((label - (totalNums - 1)) % 2) - 1) - 1;
+            }
+
+//            subIndex = ((label - (totalNums - 1)) / 2) + ((label - (totalNums - 1)) % 2) - 1;
             System.out.println("该数字在上一层的第" + subIndex + "位");
 
             //将这个数添加到结果集
             resultList.add(label);
-            numLevels--;
+            --numLevels;
 
             //循环到第二级
 
         }
         resultList.add(1);
 
+        Collections.sort(resultList);
 
         return resultList;
 
@@ -103,6 +117,8 @@ public class BinaryTree {
         List<Integer> list = pathInZigZagTree(66);
 
         list.forEach(System.out::println);
+
+
     }
 
 }
