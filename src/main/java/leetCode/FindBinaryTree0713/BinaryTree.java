@@ -1,6 +1,7 @@
 package leetCode.FindBinaryTree0713;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -10,7 +11,6 @@ import java.util.List;
  * @create 2019 - 07 -13 17:34
  */
 public class BinaryTree {
-
 
     public static List<Integer> pathInZigZagTree(int label) {
         List<Integer> resultList = new ArrayList<>();
@@ -23,26 +23,93 @@ public class BinaryTree {
             resultList.add(1);
             return resultList;
         }
+        //初始化层级 初始为2级
+        int numLevels = 2;
         //1、确定该数字所在二叉树的层级数
-        int numLevels;
-        for (int i = 1; i < label; i++) {
+        for (int i = 1; i <= label; i++) {
             if (Math.pow(2, i) - 1 >= label) {
                 numLevels = i;
                 break;
             }
         }
-        //2、
+        System.out.println("确定层级数numLevels:" + numLevels);
+
+        //上级索引
+        int subIndex = 0;
+
+        int totalNums = (int) Math.pow(2, Double.valueOf(String.valueOf(numLevels - 1)));
+        int NumLevelMax = (int) Math.pow(2, numLevels) - 1;
+        int[] arrayMax = new int[totalNums];
+        int o = 0;
+        for (int i = NumLevelMax; i > (NumLevelMax - totalNums); i--) {
+            arrayMax[o] = i;
+            o++;
+        }
+
+        if (numLevels % 2 != 0) {
+            Arrays.sort(arrayMax);
+        }
+        subIndex = ((label - (totalNums - 1)) / 2) + ((label - (totalNums - 1)) % 2) - 1;
+        resultList.add(label);
+
+        numLevels = numLevels - 1;
+        while (numLevels != 1) {
+            //2、将这一层所有的数排列
+            //这一层所有的个数
+            totalNums = (int) Math.pow(2, Double.valueOf(String.valueOf(numLevels - 1)));
+            System.out.println("这一层所有的个数totalNums:" + totalNums);
+            //这一层的最大数
+            NumLevelMax = (int) Math.pow(2, numLevels) - 1;
+            System.out.println("这一层的最大数NumLevelMax:" + NumLevelMax);
+            //将这一层的所有数存起来
+            arrayMax = new int[totalNums];
+            int j = 0;
+            //按逆序来存储
+            for (int i = NumLevelMax; i > (NumLevelMax - totalNums); i--) {
+                arrayMax[j] = i;
+                j++;
+            }
+
+            //如果层级数为奇数，这边需要按正序排个序
+            if (numLevels % 2 != 0) {
+                Arrays.sort(arrayMax);
+            }
+
+            //将目标值替换
+            label = arrayMax[subIndex];
+            //上一组
+            subIndex = ((label - (totalNums - 1)) / 2) + ((label - (totalNums - 1)) % 2) - 1;
+            System.out.println("该数字在上一层的第" + subIndex + "位");
+
+            //将这个数添加到结果集
+            resultList.add(label);
+            numLevels--;
+
+            //循环到第二级
+
+        }
+        resultList.add(1);
 
 
         return resultList;
 
-
     }
 
     public static void main(String[] args) {
-        List<Integer> list = pathInZigZagTree(68);
+        List<Integer> list = pathInZigZagTree(6699);
+
         list.forEach(System.out::println);
     }
 
-
 }
+//本级索引
+//    int index = 0;
+
+//            for(int i = 1; i < totalNums; i++){
+//                System.out.println("数组["+i + "]:" + arrayMax[i]);
+//                if (arrayMax[i] == label ){
+//                    System.out.println("该值在这一层的索引为：" + i);
+//                   //这一组的索引
+//                    index = i;
+//                }
+//            }
