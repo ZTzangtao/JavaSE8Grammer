@@ -56,7 +56,7 @@ public class BinaryTree {
         if (numLevels % 2 != 0) {
             subIndex = ((label - (totalNums - 1)) / 2) + ((label - (totalNums - 1)) % 2) - 1;
         } else {
-            subIndex = totalNums / 2 - (subIndex = ((label - (totalNums - 1)) / 2) + ((label - (totalNums - 1)) % 2) - 1 - 1);
+            subIndex = (totalNums - 1) / 2 - (((label - (totalNums - 1)) / 2) + ((label - (totalNums - 1)) % 2) - 1);
         }
 //        subIndex = ((label - (totalNums - 1)) / 2) + ((label - (totalNums - 1)) % 2) - 1;
         resultList.add(label);
@@ -88,13 +88,11 @@ public class BinaryTree {
             //将目标值替换
             label = arrayMax[subIndex];
             //上一组
-
             if (numLevels % 2 != 0) {
                 subIndex = ((label - (totalNums - 1)) / 2) + ((label - (totalNums - 1)) % 2) - 1;
             } else {
-                subIndex = totalNums / 2 - (subIndex = ((label - (totalNums - 1)) / 2) + ((label - (totalNums - 1)) % 2) - 1) - 1;
+                subIndex = (totalNums - 1) / 2 - (((label - (totalNums - 1)) / 2) + ((label - (totalNums - 1)) % 2) - 1);
             }
-
 //            subIndex = ((label - (totalNums - 1)) / 2) + ((label - (totalNums - 1)) % 2) - 1;
             System.out.println("该数字在上一层的第" + subIndex + "位");
 
@@ -114,7 +112,7 @@ public class BinaryTree {
     }
 
     public static void main(String[] args) {
-        List<Integer> list = pathInZigZagTree(66);
+        List<Integer> list = pathInZigZagTree(14);
 
         list.forEach(System.out::println);
 
