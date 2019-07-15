@@ -34,11 +34,13 @@ public class BinaryTree {
         }
         System.out.println("确定层级数numLevels:" + numLevels);
 
-        //上级索引
+        //初始化上级索引
         int subIndex = 0;
-
+        //该层级总共的个数
         int totalNums = (int) Math.pow(2, Double.valueOf(String.valueOf(numLevels - 1)));
+        //该层级的最大值
         int NumLevelMax = (int) Math.pow(2, numLevels) - 1;
+        //初始化存放每层所有数的数组
         int[] arrayMax = new int[totalNums];
         int o = 0;
         for (int i = NumLevelMax; i > (NumLevelMax - totalNums); i--) {
@@ -49,10 +51,12 @@ public class BinaryTree {
         if (numLevels % 2 != 0) {
             Arrays.sort(arrayMax);
         }
+        //数组下标从0开始
         subIndex = ((label - (totalNums - 1)) / 2) + ((label - (totalNums - 1)) % 2) - 1;
         resultList.add(label);
 
         numLevels = numLevels - 1;
+
         while (numLevels != 1) {
             //2、将这一层所有的数排列
             //这一层所有的个数
@@ -96,7 +100,7 @@ public class BinaryTree {
     }
 
     public static void main(String[] args) {
-        List<Integer> list = pathInZigZagTree(6699);
+        List<Integer> list = pathInZigZagTree(66);
 
         list.forEach(System.out::println);
     }
