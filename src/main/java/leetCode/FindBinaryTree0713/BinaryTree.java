@@ -19,11 +19,6 @@ public class BinaryTree {
         if (label < 1) {
             return null;
         }
-        //label 等于1
-        if (label == 1) {
-            resultList.add(1);
-            return resultList;
-        }
         //初始化层级 初始为2级
         int numLevels = 2;
         //1、确定该数字所在二叉树的层级数
@@ -63,7 +58,7 @@ public class BinaryTree {
 
         numLevels = numLevels - 1;
 
-        while (numLevels != 1) {
+        while (numLevels != 0) {
             //2、将这一层所有的数排列
             //这一层所有的个数
             totalNums = (int) Math.pow(2, Double.valueOf(String.valueOf(numLevels - 1)));
@@ -103,7 +98,6 @@ public class BinaryTree {
             //循环到第二级
 
         }
-        resultList.add(1);
 
         Collections.sort(resultList);
 
@@ -112,10 +106,9 @@ public class BinaryTree {
     }
 
     public static void main(String[] args) {
-        List<Integer> list = pathInZigZagTree(14);
+        List<Integer> list = pathInZigZagTree(1);
 
         list.forEach(System.out::println);
-
 
     }
 
