@@ -1,6 +1,6 @@
 package leetCode.LengthOfLongestSubstring0703;
 
-import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -19,29 +19,84 @@ public class LengthOfLongestSubstring {
      * @param s
      * @return
      */
-    public int lengthOfLongestSubstring(String s) {
-        //对s的判断
-        if (s.length() < 1 || " ".equals(s)) {
+    public static int lengthOfLongestSubstring(String s) {
+        //过滤
+        if (s.length() < 1) {
             return 0;
         }
 
-        List<String> strlist = new ArrayList<>();
+        if (s.equals(" ")) {
+            return 1;
+        }
+        //初始化数组
+        String[] strNum = new String[s.length()];
+        //初始化结果
+        int result = 0;
+        //初始化单个字符串
+        String singleStr = null;
 
-        for (int i = 0; i < s.length() - 1; i++) {
+        List<String> strList = null;
 
+        String[] strNum2 = null;
+
+        //暴力循环从左往右
+        for (int i = 0; i < s.length(); i++) {
+
+            if (i + 1 <= s.length()) {
+                singleStr = s.substring(i, i + 1);
+            } else {
+                break;
+            }
+            //转list
+            strList = Arrays.asList(strNum);
+
+            if (!strList.equals(singleStr)) {
+                strNum[i] = singleStr;
+            } else {
+                //记录一下个数
+                if (strList.size() > result) {
+                    result = strList.size();
+                }
+
+                int index = getIndex(strNum, singleStr);
+
+                strNum2 = new String[s.length()];
+
+                System.arraycopy(strNum, index + 1, strNum2, 3, 3);
+
+//                strlist.add(singleStr);
+
+//            }
+            }
 
         }
-
-
         return 0;
     }
 
+    /**
+     * 数组求索引
+     *
+     * @param arr
+     * @param value
+     * @return
+     */
+    public static int getIndex(String[] arr, String value) {
+
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] == value) {
+                return i;
+            }
+        }
+        //如果未找到返回-1
+        return -1;
+    }
+
+
     public static void main(String[] args) {
-        String s = "dsjkhjhf";
-
-        String ss = String.valueOf(s.charAt(s.length() - 1));
-
-        System.out.println(ss);
+        String s = "dvsdfr";
+        s = s.substring(6, 7);
+        System.out.println(s);
+//        System.out.println(lengthOfLongestSubstring( s ) );
     }
 
 }
