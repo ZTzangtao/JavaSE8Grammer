@@ -1,7 +1,7 @@
 package leetCode.LengthOfLongestSubstring0703;
 
-import java.util.Arrays;
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * 给定一个字符串，请你找出其中不含有重复字符的 最长子串 的长度。
@@ -20,83 +20,64 @@ public class LengthOfLongestSubstring {
      * @return
      */
     public static int lengthOfLongestSubstring(String s) {
-        //过滤
-        if (s.length() < 1) {
-            return 0;
-        }
-
-        if (s.equals(" ")) {
-            return 1;
-        }
-        //初始化数组
-        String[] strNum = new String[s.length()];
-        //初始化结果
-        int result = 0;
-        //初始化单个字符串
-        String singleStr = null;
-
-        List<String> strList = null;
-
-        String[] strNum2 = null;
-
-        //暴力循环从左往右
-        for (int i = 0; i < s.length(); i++) {
-
-            if (i + 1 <= s.length()) {
-                singleStr = s.substring(i, i + 1);
+        int n = s.length();
+        //存无序不重复的集合
+        Set<Character> set = new HashSet<>();
+        int ans = 0, i = 0, j = 0;
+        while (i < n && j < n) {
+            // try to extend the range [i, j]
+            if (!set.contains(s.charAt(j))) {
+                set.add(s.charAt(j++));
+                ans = Math.max(ans, j - i);
             } else {
-                break;
+                set.remove(s.charAt(i++));
             }
-            //转list
-            strList = Arrays.asList(strNum);
-
-            if (!strList.equals(singleStr)) {
-                strNum[i] = singleStr;
-            } else {
-                //记录一下个数
-                if (strList.size() > result) {
-                    result = strList.size();
-                }
-
-                int index = getIndex(strNum, singleStr);
-
-                strNum2 = new String[s.length()];
-
-                System.arraycopy(strNum, index + 1, strNum2, 3, 3);
-
-//                strlist.add(singleStr);
-
-//            }
-            }
-
         }
-        return 0;
+        return ans;
+
     }
 
     /**
-     * 数组求索引
+     * 判断一段字符串是否有重复
      *
-     * @param arr
-     * @param value
+     * @param s
+     * @param start
+     * @param end
      * @return
      */
-    public static int getIndex(String[] arr, String value) {
+//    public static boolean allUnique(String s, int start, int end) {
+//        Set<Character> set = new HashSet<>();
+//        for (int i = start; i < end; i++) {
+//            Character ch = s.charAt(i);
+//            if (set.contains(ch)){
+//                return false;
+//            }
+//            set.add(ch);
+//        }
+//        return true;
+//    }
 
-        for (int i = 0; i < arr.length; i++) {
-            if (arr[i] == value) {
-                return i;
-            }
-        }
-        //如果未找到返回-1
-        return -1;
-    }
-
-
+    /**
+     * 测试输出
+     *
+     * @param args
+     */
     public static void main(String[] args) {
         String s = "dvsdfr";
-        s = s.substring(6, 7);
-        System.out.println(s);
-//        System.out.println(lengthOfLongestSubstring( s ) );
+        System.out.println(lengthOfLongestSubstring(s));
+
+        s = "bbbbb";
+        System.out.println(lengthOfLongestSubstring(s));
+
+        s = "pwwkew";
+        System.out.println(lengthOfLongestSubstring(s));
+
+        s = "";
+        System.out.println(lengthOfLongestSubstring(s));
+
+        s = " ";
+        System.out.println(lengthOfLongestSubstring(s));
+
     }
 
 }

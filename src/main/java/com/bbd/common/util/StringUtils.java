@@ -195,4 +195,22 @@ public class StringUtils {
         return uuid.replaceAll("-", "");
     }
 
+    /**
+     * 数组求索引
+     *
+     * @param arr
+     * @param value
+     * @return
+     */
+    public static int getIndex(String[] arr, String value) {
+
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] == value) {
+                return i;
+            }
+        }
+        //如果未找到返回-1
+        return -1;
+    }
+
 }
