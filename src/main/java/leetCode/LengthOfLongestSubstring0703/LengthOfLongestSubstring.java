@@ -23,7 +23,9 @@ public class LengthOfLongestSubstring {
         int n = s.length();
         //存无序不重复的集合
         Set<Character> set = new HashSet<>();
-        int ans = 0, i = 0, j = 0;
+        int ans = 0;
+        int i = 0;
+        int j = 0;
         while (i < n && j < n) {
             // try to extend the range [i, j]
             if (!set.contains(s.charAt(j))) {
