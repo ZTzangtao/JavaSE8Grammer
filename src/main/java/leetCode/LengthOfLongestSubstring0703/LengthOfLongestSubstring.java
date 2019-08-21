@@ -12,8 +12,31 @@ import java.util.Set;
 public class LengthOfLongestSubstring {
 
     /**
+     * 测试输出
+     *
+     * @param args
+     */
+    public static void main(String[] args) {
+        String s = "dvsdfr";
+        System.out.println(lengthOfLongestSubstring(s));
+
+        s = "bbbbb";
+        System.out.println(lengthOfLongestSubstring(s));
+
+        s = "pwwkew";
+        System.out.println(lengthOfLongestSubstring(s));
+
+        s = "";
+        System.out.println(lengthOfLongestSubstring(s));
+
+        s = " ";
+        System.out.println(lengthOfLongestSubstring(s));
+
+    }
+
+    /**
      * abcabcbb 3   bbbb 1   pwwkew 3
-     * <p>
+     *
      * 逐个检查所有的子字符串，看它是否不含有重复的字符。
      *
      * @param s
@@ -59,27 +82,6 @@ public class LengthOfLongestSubstring {
 //        return true;
 //    }
 
-    /**
-     * 测试输出
-     *
-     * @param args
-     */
-    public static void main(String[] args) {
-        String s = "dvsdfr";
-        System.out.println(lengthOfLongestSubstring(s));
 
-        s = "bbbbb";
-        System.out.println(lengthOfLongestSubstring(s));
-
-        s = "pwwkew";
-        System.out.println(lengthOfLongestSubstring(s));
-
-        s = "";
-        System.out.println(lengthOfLongestSubstring(s));
-
-        s = " ";
-        System.out.println(lengthOfLongestSubstring(s));
-
-    }
 
 }
