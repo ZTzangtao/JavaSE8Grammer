@@ -9,7 +9,7 @@ package classicalAlgorithm;
 public class BubbleSort {
 
     public static void main(String[] args) {
-        int[] a = new int[]{3, 7, 9, 10, 11, 2};
+        int[] a = new int[]{3, 7, 9, 10, 2, 4, 3, 4, 5, 5, 6, 2};
 
         int[] b = Sort(a);
 
