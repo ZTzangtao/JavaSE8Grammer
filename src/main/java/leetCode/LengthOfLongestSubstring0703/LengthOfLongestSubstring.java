@@ -18,19 +18,19 @@ public class LengthOfLongestSubstring {
      */
     public static void main(String[] args) {
         String s = "dvsdfr";
-        System.out.println(lengthOfLongestSubstring(s));
-
-        s = "bbbbb";
-        System.out.println(lengthOfLongestSubstring(s));
+//        System.out.println(lengthOfLongestSubstring(s));
+//
+//        s = "bbbbb";
+//        System.out.println(lengthOfLongestSubstring(s));
 
         s = "pwwkew";
         System.out.println(lengthOfLongestSubstring(s));
 
-        s = "";
-        System.out.println(lengthOfLongestSubstring(s));
-
-        s = " ";
-        System.out.println(lengthOfLongestSubstring(s));
+//        s = "";
+//        System.out.println(lengthOfLongestSubstring(s));
+//
+//        s = " ";
+//        System.out.println(lengthOfLongestSubstring(s));
 
     }
 
