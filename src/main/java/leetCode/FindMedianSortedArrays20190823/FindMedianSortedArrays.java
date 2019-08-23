@@ -43,7 +43,6 @@ public class FindMedianSortedArrays {
             d = list.get(A.length + B.length / 2);
         }
 
-
         return d;
     }
 
