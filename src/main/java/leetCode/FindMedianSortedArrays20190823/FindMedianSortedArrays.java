@@ -1,5 +1,9 @@
 package leetCode.FindMedianSortedArrays20190823;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
 /**
  * 寻找两个有序数组的中位数
  *
@@ -8,8 +12,43 @@ package leetCode.FindMedianSortedArrays20190823;
  */
 public class FindMedianSortedArrays {
 
+    /**
+     * 求中位数
+     *
+     * @param A
+     * @param B
+     * @return
+     */
+    public static double findMedianSortArraysByZt(int[] A, int[] B) {
+        double d = 0;
+        List<Integer> list = new ArrayList<>();
+
+        //
+        for (int i = 0; i < A.length; i++) {
+            list.add(A[i]);
+        }
+        //
+        for (int i = 0; i < B.length; i++) {
+            list.add(B[i]);
+        }
+        Collections.sort(list);
+
+        if (A.length + B.length % 2 == 0) {
+            //如果是偶数
+            list = list.subList(A.length + B.length / 2, A.length + B.length / 2 + 1);
+            d = (list.get(0) + list.get(1)) / 2;
+
+        } else {
+            //如果是奇数
+            d = list.get(A.length + B.length / 2);
+        }
+
+
+        return d;
+    }
+
     public static void main(String[] args) {
-        System.out.println(findMedianSortedArrays(new int[]{2, 5, 8, 4, 2, 546, 8, 678, 3}, new int[]{1, 6, 865, 345, 2, 3}));
+        System.out.println(findMedianSortArraysByZt(new int[]{2, 5, 8, 4, 2, 546, 8, 678, 3}, new int[]{1, 6, 865, 345, 2, 3}));
     }
 
     /**
