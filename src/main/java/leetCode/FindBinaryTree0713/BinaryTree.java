@@ -1,9 +1,6 @@
 package leetCode.FindBinaryTree0713;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
 
 /**
  * 寻找二叉树
@@ -13,7 +10,43 @@ import java.util.List;
  */
 public class BinaryTree {
 
+    public static List<Integer> pathInZigZagTree1ms(int label) {
+        List<Integer> ans = new ArrayList<Integer>();
+        while (label != 1) {
+            ans.add(label);
+            label = label >> 1;
+            int tmp = Integer.highestOneBit(label) * 2 - 1;
+            label = label ^ (tmp >> 1);
+        }
+        ans.add(1);
+        Collections.reverse(ans);
+        return ans;
+    }
+
     public static List<Integer> pathInZigZagTree(int label) {
+        LinkedList<Integer> result = new LinkedList<>();
+        result.addFirst(label);
+
+        int num = 1;
+        int s = 1;
+        int e = 1;
+        while (label > e) {
+            num++;
+            s = e + 1;
+            e = (s << 1) - 1;
+        }
+
+        while (--num > 0) {
+            int parrent = s - (label - s) / 2 - 1;
+            result.addFirst(parrent);
+            label = parrent;
+            s = s >> 1;
+        }
+
+        return result;
+    }
+
+    public static List<Integer> pathInZigZagTreeByZt(int label) {
         List<Integer> resultList = new ArrayList<>();
         //label 大于0
         if (label < 1) {
