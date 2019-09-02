@@ -10,17 +10,17 @@ public class LongestPalindrome {
 
 
     public static void main(String[] args) {
-        System.out.println(longestPalindrome("abajkdfhgsjkdfhgiudfhgisdhf"));
+        System.out.println(longestPalindrome("abajkdfhgsjkdfhbcbcbgiudfhgisdhf"));
     }
 
     public static String longestPalindrome(String s) {
         String ans = "";
         int max = 0;
         int len = s.length();
-
+        String test;
         for (int i = 0; i < len; i++) {
             for (int j = i + 1; j <= len; j++) {
-                String test = s.substring(i, j);
+                test = s.substring(i, j);
                 if (isPalindromic(test) && test.length() > max) {
                     ans = s.substring(i, j);
                     max = Math.max(max, ans.length());
