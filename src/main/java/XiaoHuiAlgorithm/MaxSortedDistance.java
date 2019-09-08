@@ -1,7 +1,7 @@
 package XiaoHuiAlgorithm;
 
 /**
- * 无需数组求排序后相邻的最大差值
+ * 无序数组求排序后相邻的最大差值
  *
  * @author zangtao
  * @create 2019 - 09 -08 14:17
