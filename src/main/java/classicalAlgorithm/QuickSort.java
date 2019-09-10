@@ -5,7 +5,6 @@ import java.util.Arrays;
 /**
  * 快速排序
  *
- * 小辉算法
  * @author zangtao
  * @create 2019 - 08 -22 16:36
  */
