@@ -1,5 +1,7 @@
 package classicalAlgorithm;
 
+import java.util.Arrays;
+
 /**
  * 冒泡排序
  *
@@ -10,13 +12,8 @@ public class BubbleSort {
 
     public static void main(String[] args) {
         int[] a = new int[]{3, 7, 9, 10, 2, 4, 3, 4, 5, 5, 6, 2};
-
-        int[] b = Sort(a);
-
-        for (int i : b) {
-            System.out.print(i + ",");
-        }
-
+        Sort(a);
+        System.out.print(Arrays.toString(a));
     }
 
     private static int[] Sort(int[] a) {

@@ -10,6 +10,12 @@ import java.util.Arrays;
  */
 public class HeapSort {
 
+    public static void main(String[] args) {
+        int[] arr = new int[]{4, 4, 5, 21, 8};
+        heapSort(arr);
+        System.out.println(Arrays.toString(arr));
+    }
+
     public static void downAdjust(int[] array, int parentIndex, int length) {
         //temp保存父节点值，用于最后的赋值
         int temp = array[parentIndex];
@@ -52,10 +58,5 @@ public class HeapSort {
         }
     }
 
-    public static void main(String[] args) {
-        int[] arr = new int[]{4, 4, 5, 21, 8};
-        heapSort(arr);
-        System.out.println(Arrays.toString(arr));
-    }
 
 }
