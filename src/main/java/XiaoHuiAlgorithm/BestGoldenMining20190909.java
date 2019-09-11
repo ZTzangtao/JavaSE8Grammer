@@ -8,6 +8,14 @@ package XiaoHuiAlgorithm;
  */
 public class BestGoldenMining20190909 {
 
+    public static void main(String[] args) {
+        //工人数量
+        int w = 10;
+        int[] p = {5, 5, 3, 4, 3};
+        int[] g = {400, 500, 200, 300, 350};
+        System.out.println("最优收益：" + getBestGoldMining(w, g.length, p, g));
+    }
+
     /**
      * 获得金矿最大收益
      *
@@ -27,14 +35,5 @@ public class BestGoldenMining20190909 {
         return Math.max(getBestGoldMining(w, n - 1, p, g), getBestGoldMining(w - p[n - 1], n - 1, p, g) + g[n - 1]);
     }
 
-    public static void main(String[] args) {
-        //工人数量
-        int w = 10;
-        int[] p = {5, 5, 3, 4, 3};
-        int[] g = {400, 500, 200, 300, 350};
-        System.out.println("最优收益：" + getBestGoldMining(w, g.length, p, g));
-
-
-    }
 
 }
