@@ -5,6 +5,7 @@ import java.util.Arrays;
 /**
  * 希尔排序
  * 逐步分组进行粗调，在进行直接插入排序
+ * 不稳定排序
  *
  * @author zangtao
  * @create 2019 - 09 -10 17:47
