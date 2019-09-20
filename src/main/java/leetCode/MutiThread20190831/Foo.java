@@ -34,14 +34,12 @@ public class Foo {
      * @throws InterruptedException
      */
     public void first(Runnable printFirst) throws InterruptedException {
-
         // printFirst.run() outputs "first". Do not change or remove this line.
         printFirst.run();
         second.countDown();
     }
 
     public void second(Runnable printSecond) throws InterruptedException {
-
         second.await();
         // printSecond.run() outputs "second". Do not change or remove this line.
         printSecond.run();
@@ -49,7 +47,6 @@ public class Foo {
     }
 
     public void third(Runnable printThird) throws InterruptedException {
-
         third.await();
         // printThird.run() outputs "third". Do not change or remove this line.
         printThird.run();
