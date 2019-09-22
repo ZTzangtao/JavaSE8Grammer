@@ -19,6 +19,27 @@ public class StringTest {
         //~60的源码是 1100 0011
         //~60的补码是 1011 1101   （等于-61）
         System.out.println(~60);
+        String str = "a,b,c,,";
+        String[] ary = str.split(",");
+        System.out.println(ary.length);
+        method(null);
+
+    }
+
+    private static void method(String param) {
+        switch (param) {
+            // 肯定不是进入这里
+            case "sth":
+                System.out.println("it's sth");
+                break;
+            // 也不是进入这里
+            case "null":
+                System.out.println("it's null");
+                break;
+            // 也不是进入这里
+            default:
+                System.out.println("default");
+        }
 
     }
 

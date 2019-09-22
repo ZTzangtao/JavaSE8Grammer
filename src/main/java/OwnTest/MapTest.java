@@ -1,6 +1,7 @@
 package OwnTest;
 
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.Map;
 
 /**
@@ -19,12 +20,22 @@ public class MapTest {
         map.put("", "2");
         map.put("1", null);
 
-//        for (String key : map.keySet()){
-//            System.out.println(key+map.get(key));
-//        }
-        //lambda遍历map
+        //不建议这样使用
+        for (String key : map.keySet()) {
+            System.out.println(key + map.get(key));
+        }
+        //lambda遍历map （推荐）
         map.forEach((key, value) -> System.out.println(key + "," + value));
 
+        Iterator map1it = map.entrySet().iterator();
+        while (map1it.hasNext()) {
+            Map.Entry<String, String> entry = (Map.Entry<String, String>) map1it.next();
+            System.out.println("Key: " + entry.getKey() + " Value: " + entry.getValue());
+        }
+
+        for (Map.Entry<String, String> entry : map.entrySet()) {
+            System.out.println("Key: " + entry.getKey() + " Value: " + entry.getValue());
+        }
     }
 
 }
