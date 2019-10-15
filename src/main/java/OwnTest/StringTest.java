@@ -14,16 +14,19 @@ public class StringTest {
 //        String str2 = 1 + 1 + "string";
 //
 //        System.out.println( str2 );
-
 //            System.out.println(getByBit(5, 3));
         //~60的源码是 1100 0011
         //~60的补码是 1011 1101   （等于-61）
-        System.out.println(~60);
-        String str = "a,b,c,,";
-        String[] ary = str.split(",");
-        System.out.println(ary.length);
-        method(null);
+//        System.out.println(~60);
+//        String str = "a,b,c,,";
+//        String[] ary = str.split(",");
+//        System.out.println(ary.length);
+//        method(null);
+        String s = "test" + "t";
+        String string = new String("test");
+        string = string + "t";
 
+        System.out.println(s == string.intern());
     }
 
     private static void method(String param) {
