@@ -12,6 +12,13 @@ public class GreatestCommonDivisor20190907 {
         System.out.println(gcd(100, 80));
     }
 
+    /**
+     * 求最大公约数
+     *
+     * @param a
+     * @param b
+     * @return
+     */
     public static int gcd(int a, int b) {
         if (a == b) {
             return a;
