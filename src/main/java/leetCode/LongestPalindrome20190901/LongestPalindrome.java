@@ -13,12 +13,19 @@ public class LongestPalindrome {
         System.out.println(longestPalindrome("abajkdfhgsjkdfhbcbcbgiudfhgisdhf"));
     }
 
+    /**
+     * 暴力解法
+     *
+     * @param s
+     * @return
+     */
     public static String longestPalindrome(String s) {
         String ans = "";
         int max = 0;
         int len = s.length();
         String test;
         for (int i = 0; i < len; i++) {
+            //挨个遍历
             for (int j = i + 1; j <= len; j++) {
                 test = s.substring(i, j);
                 if (isPalindromic(test) && test.length() > max) {
@@ -31,6 +38,12 @@ public class LongestPalindrome {
 
     }
 
+    /**
+     * 判断字符串是否是回文
+     *
+     * @param s
+     * @return
+     */
     private static boolean isPalindromic(String s) {
         int len = s.length();
         for (int i = 0; i < len / 2; i++) {
