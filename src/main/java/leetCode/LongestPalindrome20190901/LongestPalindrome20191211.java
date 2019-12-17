@@ -30,9 +30,14 @@ public class LongestPalindrome20191211 {
                     }
                 }
                 if (arr[i][j] > maxLen){
-                    maxLen = arr[i][j];
-                    //以i位置
-                    maxEnd = i;
+                    //做个判断，下标是否对应
+                    int beforeRev = length -1 -j;
+                    if (beforeRev + arr[i][j] - 1 == i){
+                        maxLen = arr[i][j];
+                        //以i位置
+                        maxEnd = i;
+                    }
+
                 }
             }
         }
