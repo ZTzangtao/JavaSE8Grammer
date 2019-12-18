@@ -1,6 +1,9 @@
 package leetCode.LongestPalindrome20190901;
 
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * 回文最长字符串（动态规划）
  *
@@ -46,6 +49,15 @@ public class LongestPalindrome20191211 {
 
     public static void main(String[] args) {
         System.out.println(longestPalindrome("abc435cba"));
+        Map<String,String> map = new HashMap<>(1);
+        map.put("qq","ww");
+        map.put("zz","1");
+        map.put("cc","2");
+        map.put("vv","3");
+
+        map.forEach( (k,v) ->{
+            System.out.println(k);
+        });
     }
 
 
