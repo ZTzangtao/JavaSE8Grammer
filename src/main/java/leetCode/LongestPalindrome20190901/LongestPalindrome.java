@@ -1,7 +1,7 @@
 package leetCode.LongestPalindrome20190901;
 
 /**
- * 最长的回文子串
+ * 最长的回文子串（暴力解法）
  *
  * @author zangtao
  * @create 2019 - 09 -01 17:59

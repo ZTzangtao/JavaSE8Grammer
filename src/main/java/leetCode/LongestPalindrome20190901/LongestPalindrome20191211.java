@@ -1,8 +1,12 @@
 package leetCode.LongestPalindrome20190901;
 
 
+import com.sun.xml.internal.ws.api.model.wsdl.WSDLOutput;
+import lombok.SneakyThrows;
+
 import java.util.HashMap;
 import java.util.Map;
+import java.util.regex.Pattern;
 
 /**
  * 回文最长字符串（动态规划）
@@ -16,11 +20,15 @@ public class LongestPalindrome20191211 {
         if ("".equals(s)){
             return "";
         }
+        //原始字符串 origin
         String origin = s;
-        //字符串反转
+        //字符串反转 reverse
         String reverse = new StringBuilder(s).reverse().toString();
+        //字符串长度 length
         int length = s.length();
+        //创建二维数组
         int[][] arr = new int[length][length];
+        //
         int maxLen = 0;
         int maxEnd = 0;
         for (int i = 0; i < length;i++){
@@ -48,16 +56,11 @@ public class LongestPalindrome20191211 {
     }
 
     public static void main(String[] args) {
-        System.out.println(longestPalindrome("abc435cba"));
-        Map<String,String> map = new HashMap<>(1);
-        map.put("qq","ww");
-        map.put("zz","1");
-        map.put("cc","2");
-        map.put("vv","3");
+//         System.out.println(longestPalindrome(""));
 
-        map.forEach( (k,v) ->{
-            System.out.println(k);
-        });
+        String regex = "^[^\\u4e00-\\u9fa5]{0,}$";
+        boolean flag = Pattern.matches(regex,"w w 我");
+        System.out.println("输入内容："+flag );
     }
 
 

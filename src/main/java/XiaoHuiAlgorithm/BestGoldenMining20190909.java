@@ -11,7 +11,9 @@ public class BestGoldenMining20190909 {
     public static void main(String[] args) {
         //工人数量
         int w = 10;
+        //金矿开采所需的工人数量
         int[] p = {5, 5, 3, 4, 3};
+        //金矿储量
         int[] g = {400, 500, 200, 300, 350};
         System.out.println("最优收益：" + getBestGoldMining(w, g.length, p, g));
     }
