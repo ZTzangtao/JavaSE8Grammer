@@ -56,11 +56,8 @@ public class LongestPalindrome20191211 {
     }
 
     public static void main(String[] args) {
-//         System.out.println(longestPalindrome(""));
+         System.out.println(longestPalindrome("abc435cba"));
 
-        String regex = "^[^\\u4e00-\\u9fa5]{0,}$";
-        boolean flag = Pattern.matches(regex,"w w 我");
-        System.out.println("输入内容："+flag );
     }
 
 
