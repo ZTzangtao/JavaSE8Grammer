@@ -37,18 +37,17 @@ public class LongestPalindrome20191211 {
                     if (i==0 || j==0){
                         arr[i][j] = 1;
                     } else {
-                        arr[i][j] = arr[i -1][j - 1] + 1;
+                        arr[i][j] = arr[i - 1][j - 1] + 1;
                     }
                 }
                 if (arr[i][j] > maxLen){
-                    //做个判断，下标是否对应
                     int beforeRev = length -1 -j;
+                    //做个判断，下标是否对应
                     if (beforeRev + arr[i][j] - 1 == i){
                         maxLen = arr[i][j];
                         //以i位置
                         maxEnd = i;
                     }
-
                 }
             }
         }
