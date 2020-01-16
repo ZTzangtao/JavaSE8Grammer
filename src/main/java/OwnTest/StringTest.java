@@ -1,5 +1,13 @@
 package OwnTest;
 
+import lombok.SneakyThrows;
+
+import java.net.InetAddress;
+import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
+import java.util.Date;
+import java.util.UUID;
+
 /**
  * 字符串练习
  *
@@ -8,7 +16,10 @@ package OwnTest;
  */
 public class StringTest {
 
+    @SneakyThrows
     public static void main(String[] args) {
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd hh:mm");
+        System.out.println(sdf.format(new Date()));
 //        String str1 = "string" + 1 + 1;
 //
 //        String str2 = 1 + 1 + "string";

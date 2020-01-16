@@ -13,14 +13,8 @@ public class pattenUtils {
 
         //只能输入数字和字母
         String numberFlag = "[\\da-zA-z]+";
-
-
         boolean flag = Pattern.matches(isWord,"w w 我");
         System.out.println("输入内容："+flag );
-
-
-
-
     }
 
 
