@@ -38,3 +38,13 @@ from Customers t
 where t.Id not in(
     select o.CustomerId from Orders o
 )
+##每个部门工资最高的员工 in 相关用法
+select d.Name as Department,
+                e.Name as Employee, e.Salary 
+from Employee e
+inner join Department d on e.DepartmentId  = d.Id 
+where (e.DepartmentId,e.Salary) in (
+        select em.DepartmentId, max(em.Salary)
+        from Employee em
+        group by em.DepartmentId 
+)
