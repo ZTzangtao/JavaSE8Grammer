@@ -6,6 +6,7 @@ import java.net.InetAddress;
 import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
 import java.util.Date;
+import java.util.Random;
 import java.util.UUID;
 
 /**
@@ -33,11 +34,20 @@ public class StringTest {
 //        String[] ary = str.split(",");
 //        System.out.println(ary.length);
 //        method(null);
-        String s = "test" + "t";
-        String string = new String("test");
-        string = string + "t";
+//        String s = "test" + "t";
+//        String string = new String("test");
+//        string = string + "t";
+//
+//        System.out.println(s == string.intern());
 
-        System.out.println(s == string.intern());
+        int n = 6;
+        StringBuilder code = new StringBuilder();
+        Random ran = new Random();
+        for (int i = 0; i < n; i++) {
+            code.append(Integer.valueOf(ran.nextInt(10)).toString());
+        }
+        System.out.println(  code.toString());
+
     }
 
     private static void method(String param) {
