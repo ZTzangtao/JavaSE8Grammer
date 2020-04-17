@@ -19,6 +19,9 @@ public class StringTest {
 
     @SneakyThrows
     public static void main(String[] args) {
+
+        System.out.println(StringTest.getHashCode());
+
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd hh:mm");
         System.out.println(sdf.format(new Date()));
 //        String str1 = "string" + 1 + 1;
@@ -78,6 +81,22 @@ public class StringTest {
         //按位右移运算bitNum个位置
         //之后和0000 00001 比较第0位，相同则是1，不同则是0
         return targetNum >> (bitNum - 1) & 1;
+    }
+
+    public static int getHashCode() {
+        String name = "zt";
+         final char value[] = name.toCharArray();
+        int hash = 0;
+        int h = hash;
+        if (h == 0 && value.length > 0) {
+            char val[] = value;
+
+            for (int i = 0; i < value.length; i++) {
+                h = 31 * h + val[i];
+            }
+            hash = h;
+        }
+        return h;
     }
 
 
