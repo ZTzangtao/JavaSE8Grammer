@@ -19,8 +19,10 @@ public class TranslateInfomation {
      * @return
      */
     public static int numWays(int n, int[][] relation, int k) {
+        //结果
+        int result = 0;
+        //终结点的值
         int q = n - 1;
-
         List<Map<Integer,Integer>> list = new ArrayList<>();
         Map<Integer,Integer> map ;
         //遍历二维数组
@@ -35,21 +37,23 @@ public class TranslateInfomation {
             }
             list.add(map);
         }
+        int j = 0;
         for(Map<Integer,Integer> keyMap : list){
+
+            keyMap.get(0);
+
             Iterator<Map.Entry<Integer,Integer>> iterator = keyMap.entrySet().iterator();
             while (iterator.hasNext()){
+                j++;
+                if (j == k){
+                    break;
+                }
                 Map.Entry<Integer,Integer> entry = iterator.next();
                 System.out.println(entry.getKey() + ":"+ entry.getValue());
             }
         }
-
-
-
-
         //返回满足k轮的方案数
-        return 0;
-
-
+        return result;
     }
 
     public static void main(String[] args) {
