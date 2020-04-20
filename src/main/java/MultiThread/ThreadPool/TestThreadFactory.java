@@ -39,4 +39,13 @@ public class TestThreadFactory {
 
     }
 
+    public void testThreadPool(){
+        final ThreadPoolExecutor executor = new ThreadPoolExecutor(2,3,
+                60,TimeUnit.SECONDS,
+                new ArrayBlockingQueue<Runnable>(5));
+
+
+    }
+
+
 }
