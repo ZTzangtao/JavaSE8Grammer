@@ -18,18 +18,19 @@ public class IntegerTest {
 //
 //        Integer aa = 3;
 //        Integer bb = 3;
-//        Integer cc = 273;
-//        Integer dd = 273;
+//        Integer cc = 128;
+//        Integer dd = 128;
 //        System.out.println(aa.equals(bb));
 //        System.out.println(cc.equals(dd));
 //        System.out.println(aa == bb);
+//        //-129  128    -128~127为true
 //        System.out.println(cc == dd);
-        int i =1;
-        int j = i++;
-        if ((j> ++j) && (i++ == j)){
-            j+= i;
-        }
-        System.out.println(j);
+//        int i =1;
+//        int j = i++;
+//        if ((j> ++j) && (i++ == j)){
+//            j+= i;
+//        }
+//        System.out.println(j);
 
 
     }

@@ -1,9 +1,5 @@
 package leetCode.node;
 
-import javax.xml.crypto.Data;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-
 /**
  * @author zangtao
  * @date 2020/4/10 9:30
@@ -26,12 +22,44 @@ public class ReverseNode {
      你不能只是单纯的改变节点内部的值，而是需要实际进行节点交换。
      */
 
+    public ListNode reverseKGroup(ListNode head, int k) {
+        ListNode dummy = new ListNode(0);
+        dummy.next = head;
+        ListNode pre = dummy;
+        ListNode end = dummy;
+
+        while(end.next != null){
+            for (int i = 0;i<k && end != null; i++){
+                end = end.next;
+            }
+            if(end == null){
+                break;
+            }
+            ListNode start = pre.next;
+            ListNode next = end.next;
+            end.next = null;
+            pre.next = reverse(start);
+            start.next = next;
+            pre = start;
+            end = pre;
+        }
+        return dummy.next;
+    }
+
+    private ListNode reverse(ListNode head) {
+        ListNode pre = null;
+        ListNode curr = head;
+        while(curr != null){
+            ListNode next = curr.next;
+            curr.next = pre;
+            pre = curr;
+            curr = next;
+        }
+        return pre;
+    }
+
     public static void main(String[] args) {
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
-       Date date = new Date();
-       sdf.format(date);
-        System.out.println(sdf.format(date));
-        System.out.println(sdf.format(date).substring(0,10));
+        
     }
 
 }

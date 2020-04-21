@@ -2,20 +2,17 @@ package leetCode.node;
 
 import lombok.Data;
 
-import java.util.concurrent.*;
-
 /**
  * @author zangtao
  * @date 2020/4/10 9:27
  */
-@Data
 public class ListNode {
 
-    private int val;
+     int val;
 
-    private ListNode next;
+     ListNode next;
 
-    private ListNode (int x){
+     ListNode (int x){
         val = x;
     }
 
