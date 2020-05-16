@@ -25,7 +25,8 @@ public class anogram {
     }
 
     public static void main(String[] args) {
-        isAnagram("qweqwe","qweqwe");
+        System.out.println( isAnagram("qweqwe","wqeewq"));
+
     }
 
 }
