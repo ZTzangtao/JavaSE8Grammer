@@ -1,7 +1,8 @@
 package leetCode.arrayAndString;
 
-import java.util.Arrays;
-
+/**
+ * @author zangtao
+ */
 public class MaxProduct {
 
     public static void main(String[] args) {
