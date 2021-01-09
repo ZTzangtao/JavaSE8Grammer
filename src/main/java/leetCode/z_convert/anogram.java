@@ -1,5 +1,8 @@
 package leetCode.z_convert;
 
+/**
+ * @author zangtao
+ */
 public class anogram {
 
     public static boolean isAnagram(String s, String t) {
