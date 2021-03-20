@@ -2,7 +2,6 @@ package leetCode.systemLearningAlgorithm.KMP;
 
 import leetCode.node.Node;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class TreeEqual {
