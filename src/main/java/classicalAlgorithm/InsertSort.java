@@ -16,7 +16,7 @@ public class InsertSort {
         System.out.println(Arrays.toString(arr));
     }
 
-    //插入排序的核心思想：维护一个有序区，把元素一个一个插入到有序区的适当位置，知道所有元素有序为止
+    //插入排序的核心思想：维护一个有序区，把元素一个一个插入到有序区的适当位置，直到所有元素有序为止
     public static void insertSort(int[] arrary) {
         for (int i = 1; i < arrary.length; i++) {
             int insertValue = arrary[i];
