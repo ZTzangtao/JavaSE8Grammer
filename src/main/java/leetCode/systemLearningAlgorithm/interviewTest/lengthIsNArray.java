@@ -3,7 +3,7 @@ package leetCode.systemLearningAlgorithm.interviewTest;
 /**
  * @author zt
  */
-public class LengthIsNArray {
+public class lengthIsNArray {
     private int halfSize;
 
     /**
