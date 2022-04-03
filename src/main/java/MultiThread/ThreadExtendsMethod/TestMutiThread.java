@@ -12,8 +12,10 @@ public class TestMutiThread extends Thread {
     @Override
     public void run() {
         while (true) {
-            System.out.println(count + "");// 打印 Count 变量
-            if (--count == 0) {// 使count 变量 自减 ，当自减为0时，退出循环
+            // 打印 Count 变量
+            System.out.println(count + "");
+            // 使count 变量 自减 ，当自减为0时，退出循环
+            if (--count == 0) {
                 return;
             }
         }
