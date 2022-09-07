@@ -7,8 +7,18 @@ import java.util.*;
 /**
  * @Author: Tommy
  * @DATE: 2022/9/3
+ * @Description: 练习
  */
 public class walmart_20220903 {
+
+    public static void main(String[] args) {
+//        int[][] requestArray = new int[][]{{14,25},{35,123},{2,10},{36,128},{1,11}};
+//        Map<String, Object> res = rentRequest(requestArray,365);
+//        System.out.println("个数：" + res.get("size"));
+//        System.out.println("请求：" + JSON.toJSONString(res.get("array")));
+
+        System.out.println(intToString(6));
+    }
 
     /**
      * 假设你有一个房间要出租1年，然后收到了很多租赁请求，里面包含了开始日期和结束日期。求最多可以满足的请求数
@@ -50,12 +60,25 @@ public class walmart_20220903 {
         return map;
     }
 
-    public static void main(String[] args) {
-        int[][] requestArray = new int[][]{{14,25},{35,123},{2,10},{36,128},{1,11}};
-        Map<String, Object> res = rentRequest(requestArray,365);
-        System.out.println("个数：" + res.get("size"));
-        System.out.println("请求：" + JSON.toJSONString(res.get("array")));
-
+    /**
+     * 找出下面代码的规律并且编写一个函数，转换特定的整数到对应的字符串。
+     * 1 => A，2 => B，3 => C，...，26 => Z，27 => AA，28 => AB，29 => AC，...，52 => AZ，53 => BA，...
+     * 英文字母与数字的相互转换如： A->1 AA->27 26->Z 28->AB  数字转字母 最后给一串数字 算对应字母加排序
+     */
+    public static String intToString(int i) {
+        StringBuilder stringBuilder = new StringBuilder();
+        while (i > 0) {
+            // 65 -> A
+            stringBuilder.append( (char) ((i % 26) == 0 ? 'Z' : (i % 26) + 'A' - 1));
+            i = (i - 1) / 26;
+        }
+        return stringBuilder.reverse().toString();
     }
+
+
+
+
+
+
 
 }
