@@ -1,6 +1,7 @@
 package interview;
 
 import com.alibaba.fastjson.JSON;
+import entity.ListNode;
 
 import java.util.*;
 
@@ -75,6 +76,24 @@ public class walmart_20220903 {
         return stringBuilder.reverse().toString();
     }
 
+    /**
+     * 反转链表
+     * 1->2>3>4>5
+     * 5>4>3>2>1
+     */
+    public static ListNode intToString(ListNode listNode) {
+        ListNode cur = listNode;
+        ListNode pre = null;
+        ListNode next = null;
+        while (cur != null) {
+            next = cur.next;
+            cur.next = pre;
+            pre = cur;
+            cur = next;
+        }
+        return pre;
+
+    }
 
 
 
