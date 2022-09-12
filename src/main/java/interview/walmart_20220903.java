@@ -18,7 +18,12 @@ public class walmart_20220903 {
 //        System.out.println("个数：" + res.get("size"));
 //        System.out.println("请求：" + JSON.toJSONString(res.get("array")));
 
-        System.out.println(intToString(6));
+//        System.out.println(intToString(6));
+        Boolean a = null;
+        if (a != null && a == true) {
+            System.out.println(111);
+        }
+        System.out.println(222);
     }
 
     /**
@@ -73,6 +78,7 @@ public class walmart_20220903 {
             stringBuilder.append( (char) ((i % 26) == 0 ? 'Z' : (i % 26) + 'A' - 1));
             i = (i - 1) / 26;
         }
+        System.out.println((char) (3 + 'B'));
         return stringBuilder.reverse().toString();
     }
 
@@ -80,6 +86,8 @@ public class walmart_20220903 {
      * 反转链表
      * 1->2>3>4>5
      * 5>4>3>2>1
+     *
+     * 迭代
      */
     public static ListNode intToString(ListNode listNode) {
         ListNode cur = listNode;
@@ -95,8 +103,20 @@ public class walmart_20220903 {
 
     }
 
-
-
+    /**
+     * 反转链表
+     *
+     * 递归
+     */
+    public static ListNode recursionNode(ListNode listNode) {
+      if (listNode == null || listNode.next == null ) {
+          return listNode;
+      }
+        ListNode listNode1 = recursionNode(listNode.next);
+        listNode.next.next = listNode;
+        listNode.next = null;
+        return listNode1;
+    }
 
 
 
