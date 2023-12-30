@@ -13,17 +13,17 @@ import java.util.*;
 public class walmart_20220903 {
 
     public static void main(String[] args) {
-//        int[][] requestArray = new int[][]{{14,25},{35,123},{2,10},{36,128},{1,11}};
-//        Map<String, Object> res = rentRequest(requestArray,365);
-//        System.out.println("个数：" + res.get("size"));
-//        System.out.println("请求：" + JSON.toJSONString(res.get("array")));
+        int[][] requestArray = new int[][]{{14,25},{35,123},{2,10},{36,128},{1,11}};
+        Map<String, Object> res = rentRequest(requestArray,365);
+        System.out.println("个数：" + res.get("size"));
+        System.out.println("请求：" + JSON.toJSONString(res.get("array")));
 
 //        System.out.println(intToString(6));
-        Boolean a = null;
-        if (a != null && a == true) {
-            System.out.println(111);
-        }
-        System.out.println(222);
+//        Boolean a = null;
+//        if (a != null && a == true) {
+//            System.out.println(111);
+//        }
+//        System.out.println(222);
     }
 
     /**
